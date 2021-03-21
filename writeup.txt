@@ -13,7 +13,7 @@
   console.log(a) // [5,2]
 
   (
-    In the above case since data type is array it is copied by reference so variable a and varaible but
+    In the above case since data type is array it is copied by reference so variable a and variable but
    points to same memory location thus changing b changes the same array pointed by a 
     
   )
@@ -32,7 +32,7 @@
 
   Easy Way will be JSON.parse(JSON.stringify(object))
 
-  But JSON method will only support array,object,number,boolean,string,null (other type like date,undefined,function is ignored)
+  But JSON method will only support array,object,number,boolean,string,null (other data types like date,undefined,function etc..is ignored)
 
   Reliable way is to write a recursive deep cloning method by ourselves or we can use cloneDeep function from lodash
 
