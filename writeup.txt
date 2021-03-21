@@ -1,0 +1,39 @@
+1) Copy by value vs copy by reference
+
+  In Javacript primitives are of copy by value. But complex data type like array and object are 
+  copy by reference. In copy by value a new memory space is created and assigned to a variable but in 
+  case of copy of reference a pointer link address is assigned to variable instead of real value
+
+  so 
+
+  let a = [1,2];
+  let b = a;
+
+  b[0] = 5;
+  console.log(a) // [5,2]
+
+  (
+    In the above case since data type is array it is copied by reference so variable a and varaible but
+   points to same memory location thus changing b changes the same array pointed by a 
+    
+  )
+
+
+2) How to copy by value a composite datatype (array+objects).
+
+
+  If the Object conatins object or array which is of one level deep then we can iterate over each property
+  in object and copy the value if its primitive data type or if its complex we can use Object.assign() or array Copy methods 
+  to do the work
+
+
+  But there is gotcha in above method if the object is deeply nested with other complex data type then we 
+  need to do a deep copy  
+
+  Easy Way will be JSON.parse(JSON.stringify(object))
+
+  But JSON method will only support array,object,number,boolean,string,null (other type like date,undefined,function is ignored)
+
+  Reliable way is to write a recursive deep cloning method by ourselves or we can use cloneDeep function from lodash
+
+
